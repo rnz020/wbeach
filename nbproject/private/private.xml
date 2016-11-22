@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/Laravel/wbeach/app/Modules/subscription/routes.php</file>
+            <file>file:/C:/xampp/htdocs/Laravel/wbeach/config/app.php</file>
+            <file>file:/C:/xampp/htdocs/Laravel/wbeach/resources/views/layouts/app.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Laravel/wbeach/app/Http/helpers.php</file>
+            <file>file:/C:/xampp/htdocs/Laravel/wbeach/app/Modules/subscription/Views/holdings/index.blade.php</file>
+            <file>file:/C:/xampp/htdocs/Laravel/wbeach/public/js/functions.js</file>
+            <file>file:/C:/xampp/htdocs/Laravel/wbeach/app/Modules/subscription/Controllers/HoldingController.php</file>
+            <file>file:/C:/xampp/htdocs/Laravel/wbeach/app/Models/dao/HoldingDAO.php</file>
+            <file>file:/C:/xampp/htdocs/Laravel/wbeach/public/js/subscription/holding/index.js</file>
+            <file>file:/C:/xampp/htdocs/Laravel/wbeach/app/Holding.php</file>
+            <file>file:/C:/xampp/htdocs/Laravel/wbeach/app/Modules/subscription/Views/holdings/partials/modals/show-holding.blade.php</file>
+        </group>
+    </open-files>
+</project-private>
