@@ -1,0 +1,3 @@
+
+[26-Nov-2016 00:35:06 America/Lima] PHP Parse error:  syntax error, unexpected '}' in /home/jreategui/wbeach/app/Providers/AppServiceProvider.php on line 29
+[26-Nov-2016 01:11:20 America/Lima] PHP Fatal error:  Call to undefined function path_public() in /home/jreategui/wbeach/storage/framework/views/11df46e8d145885d882a06bf03b350528e5c0ae9.php on line 82
