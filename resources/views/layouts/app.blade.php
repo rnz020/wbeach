@@ -34,14 +34,45 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
-<style>
+    
+    <style>
     a.kendo-buttons{
         padding: 2px;
-       
         text-decoration: none;
     }
+    
+    .bg-primary {
+    background-color:rgb(54, 96, 146) !important;
+    color: #e1f0fa;
+    border-bottom: 1px solid black !important;;
+}
+    .sidebar-left-content{
+       background:rgb(54, 96, 146)
+    }
+    section#content, #main{
+        background:rgb(54, 96, 146)
+    }
+     #main:before{
+        background:rgb(54, 96, 146)
+    }
+    #topbar{
+        background:rgb(54, 96, 146)
+    }
+    #sidebar_left{
+       border-right: 1px solid rgb(85,142,213) !important;
+    }
+    .bg-info.light{
+       background-color:rgb(79,129,189) !important;
+    }
+    .bg-info .text-muted{
+       background-color:rgb(142,180,227)  !important;
+    }
+    .btn-test{
+        border-radius: 30px;
+        width: 100px; background-color:rgb(79,129,189) 
+    }
 
-</style>   
+    </style>   
 </head>
 
 <body class="dashboard-page sb-l-o sb-r-c onload-check" style="min-height: 703px; overflow-x: initial;">
@@ -81,14 +112,17 @@
         ------------------------------------------------------------------->
 
         <!-- Start: Header -->
-        <header class="navbar navbar-fixed-top navbar-shadow">
+        <header class="navbar navbar-fixed-top navbar-shadow bg-primary">
             <div class="navbar-branding dark">
                 <a class="navbar-brand" href="#">
-                    <b>Absolute</b>Admin
+<!--    comments                <b>Absolute</b>Admin-->
+                          <button class="btn btn-primary btn-test">Home Page</button>
+                          <button class="btn btn-primary btn-test">Salir</button>
                 </a>
                 <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
             </div>
-            @include('layouts.navs.nav-left')
+<!--            comments-->
+<!--            @include('layouts.navs.nav-left')-->
             @include('layouts.navs.nav-rigth')
         </header>
         <!-- End: Header -->
@@ -108,7 +142,7 @@
            Results: Fixed Left Sidebar with light/white background
         ------------------------------------------------------------------->
 
-        <!-- Start: Sidebar -->
+        <!-- Start: Sidebar-->
         <aside id="sidebar_left" class="nano nano-light affix sidebar-light has-scrollbar">
             
             <!-- Start: Sidebar Left Content -->
@@ -173,15 +207,15 @@
             </div>
             <!-- End: Topbar-Dropdown -->
                  
-            <!-- Start: Topbar -->
-            <header id="topbar" class="alt affix">
+            <!-- Start: Topbar comments-->
+<!--            <header id="topbar" class="alt affix" >
                 <div class="topbar-left">
                     @yield('breadcrumb')
                 </div>
                 <div class="topbar-right">
                     @yield('topbar')
                 </div>
-            </header>
+            </header>-->
             <!-- End: Topbar -->
 
             <!-- Begin: Content -->
