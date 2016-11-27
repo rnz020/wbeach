@@ -2,7 +2,7 @@
 
 Route::group(['middleware' => ['web','auth']], function () {
 
-    Route::group(['module' => 'Subscription', 'namespace' => 'App\Modules\subscription\Controllers'], function() {
+    Route::group(['module' => 'Subscription', 'namespace' => 'App\Modules\Subscription\Controllers'], function() {
         // Holding routes
         Route::get('subscription/holdings',                       ['middleware' => [],         'as' => 'subscription.holdings',            'uses' => 'HoldingController@index' ]);
         Route::get('subscription/holdings/load',                  ['middleware' => [],         'as' => 'subscription.holdings.load',       'uses' => 'HoldingController@load' ]);

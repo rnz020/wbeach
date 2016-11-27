@@ -3,7 +3,7 @@
 namespace App\Modules\subscription\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\subscription\HoldingRequest;
+use App\Http\Requests\Subscription\HoldingRequest;
 use App\Http\Controllers\Controller;
 use App\Holding;
 
@@ -112,7 +112,7 @@ class HoldingController extends Controller
         $pageSize = $request->input('pageSize');
         $sort     = getSortValues( $request->input('sort') );
 
-        $result = \App\Models\DAO\HoldingDAO::getHoldingsForGrid($filter, $skip, $pageSize, $sort);
+        $result = \App\Models\Dao\HoldingDAO::getHoldingsForGrid($filter, $skip, $pageSize, $sort);
   
         return ['data' => $result['result'], 'total' => $result['count']];
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\subscription;
+namespace App\Http\Requests\Subscription;
 
 use App\Http\Requests\Request;
 

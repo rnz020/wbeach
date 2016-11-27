@@ -13,10 +13,10 @@
 Route::group(['middleware' => ['web']], function () {
     
     Route::get('/', function () {
-//        return view('welcome');
-          return view('auth.login');
+        return view('welcome');
+      //    return view('auth.login');
     });
- 
+    
         
     // Authentication Routes...
         Route::get('login',  'Auth\LoginController@showLoginForm')->name('login');
@@ -35,3 +35,4 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::get('/home', ['',        'as' => 'home',    'uses' => 'HomeController@index' ]);
 });
+

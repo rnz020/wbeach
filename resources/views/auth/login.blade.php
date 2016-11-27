@@ -51,6 +51,50 @@
     opacity: 0.8;
         color: #fff;
 }
+body.external-page #main {
+    background:rgb(54, 96, 146);
+}
+
+
+.panel-body label{
+   color:white;
+}
+
+.admin-form .panel-info{
+   border-radius:50px; 
+}
+.admin-form .panel-footer{
+    border-radius: 0 0 50px 50px;
+    background: rgb(79, 129, 189);
+    border-top: 1px rgb(79, 129, 200)
+}
+
+.admin-form .panel-body{
+    border-radius: 50px 50px  0 0 ;
+    background: rgb(79, 129, 189);
+}
+
+#img-circle{
+    height:120px; 
+    width:120px; 
+    background: rgb(142, 180, 227); 
+    border-radius: 120px
+}
+
+#contact input{
+    background: rgb(142, 180, 227); 
+}
+#content-circle{
+    padding-bottom: 90px;
+}
+.panel-footer .btn-primary{
+    border-radius: 10px;
+    background:rgb(54, 96, 146);
+}
+
+body.external-page #content .admin-form{
+    margin-top: -1px;
+}
 </style>
 
 <body class="external-page sb-l-c sb-r-c">
@@ -68,32 +112,39 @@
 
       <!-- Begin: Content -->
       <section id="content">
-          <div class="row"> 
+    <div class="row"> 
     <div class="col-sm-6">
-        <h1>Registrate!</h1>
+        <h1>Bienvenido!</h1>
         <div class="description">
-							<p class="medium-paragraph">
-								Por favor identificate para saber quien eres y que permisos tienes. It comes with a lot of new features. Check it out now!
-							</p>
-						</div>
+            <p class="medium-paragraph">
+                    Por favor identificate para saber quien eres y que permisos tienes. It comes with a lot of new features. Check it out now!
+            </p>
+	</div>
     </div>  
+        
+<!--    <div class="col-sm-1">
+        <div id="separ" style="width: 2px;
+    height: 500px;
+    background: #3bafda;"> </div>
+    </div>  -->
+        
     <div class="col-sm-6">
         <div class="admin-form theme-info" id="login1">
 
           <div class="row mb15 table-layout">
 
             <div class="col-xs-6 va-m pln">
-              <a href="dashboard.html" title="Return to Dashboard">
+<!--comments              <a href="dashboard.html" title="Return to Dashboard">
                 <img src="{{ asset('bower_components/assets/img/logos/logo_white.png') }}" title="AdminDesigns Logo" class="img-responsive w250">
-              </a>
+              </a>-->
             </div>
 
             <div class="col-xs-6 text-right va-b pr5">
-              <div class="login-links">
+<!--  comments            <div class="login-links">
                 <a href="{{ url('/login') }}" class="active" title="Sign In">Sign In</a>
                 <span class="text-white"> | </span>
                 <a href="{{ url('/register') }}" class="" title="Register">Register</a>
-              </div>
+              </div>-->
 
             </div>
 
@@ -101,10 +152,10 @@
 
           <div class="panel panel-info mt10 br-n">
 
-            <div class="panel-heading heading-border bg-white">
+<!--            <div class="panel-heading heading-border bg-white">
               <span class="panel-title hidden">
                 <i class="fa fa-sign-in"></i>Register</span>
-<!--              <div class="section row mn">
+              <div class="section row mn">
                 <div class="col-sm-4">
                   <a href="#" class="button btn-social facebook span-left mr5 btn-block">
                     <span>
@@ -123,10 +174,11 @@
                       <i class="fa fa-google-plus"></i>
                     </span>Google+</a>
                 </div>
-              </div>-->
-            </div>
+              </div>
+            </div>-->
 
             <!-- end .form-header section -->
+            
             <form method="post" action="{{ url('/login') }}" id="contact">
                 {{ csrf_field() }}
               <div class="panel-body bg-light p30">
@@ -153,28 +205,30 @@
                           </span>Google+</a>
                       </div>
                     </div>-->
+                    <div id='content-circle'>
+                        <div id="img-circle">
+                            
+                        </div>
+                    </div>
 
                     <div class="section {{ $errors->has('email') ? ' has-error' : '' }}">
-                      <label for="username" class="field-label text-muted fs18 mb10">Username</label>
-                      <label for="username" class="field prepend-icon">
-                        <input type="emal" name="email" id="email" class="gui-input" placeholder="Enter username">
+                      <label for="username" class="field-label fs18 mb10">Usuario</label>
+                        <input type="text" name="username" id="username" class="gui-input" >
                         <label for="username" class="field-icon">
-                          <i class="fa fa-user"></i>
                         </label>
                       </label>
-                      @if ($errors->has('email'))
+                      @if ($errors->has('username'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('username') }}</strong>
                                     </span>
                                 @endif
                     </div>
                     <!-- end section -->
                     <div class="section {{ $errors->has('password') ? ' has-error' : '' }}" >
-                      <label for="username" class="field-label text-muted fs18 mb10">Password</label>
+                      <label for="username" class="field-label fs18 mb10">Contraseña</label>
                       <label for="password" class="field prepend-icon">
-                          <input type="password" name="password" id="password" class="gui-input" required placeholder="Enter password">
+                          <input type="password" name="password" id="password" class="gui-input" required >
                         <label for="password" class="field-icon">
-                          <i class="fa fa-lock"></i>
                         </label>
                       </label>
                             @if ($errors->has('password'))
@@ -201,19 +255,25 @@
               </div>
               <!-- end .form-body section -->
               <div class="panel-footer clearfix p10 ph15">
-                <button type="submit" class="button btn-primary mr10 pull-right">Sign In</button>
-                <label class="switch ib switch-primary pull-left input-align mt10">
+                  <div class="row">  
+                      <div class="col-md-2"></div>       
+                <div class="col-md-3">     
+                <button type="submit" class="button btn-primary">Ingresar</button></div> 
+                <div class="row col-md-3"><button class="button btn-primary mr1">Nuevo</button></div> 
+                <div class="row col-md-3"><button class="button btn-primary mr10 ">Cambio</button></div> 
+<!--                <label class="switch ib switch-primary pull-left input-align mt10">
                   <input type="checkbox" name="remember" id="remember" checked>
                   <label for="remember" data-on="YES" data-off="NO"></label>
                   <span>Remember me</span>
-                </label>
+                </label>-->
+                  </div>
               </div>
               <!-- end .form-footer section -->
-            </form>
+            </form> 
           </div>
         </div>
     </div>
-</div>
+    </div>
       </section>
       <!-- End: Content -->
 
