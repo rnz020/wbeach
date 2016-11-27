@@ -29,30 +29,6 @@
    <![endif]-->
 </head>
 
-<style>
-    h1{
-        color:#fff;
-        margin-top: 10px;
-    font-size: 40px;
-    font-weight: 700;
-
-    line-height: 44px;
-    }
-    
-     .description {
-    margin: 20px 0 30px 0;
-}
-.medium-paragraph {
-    font-size: 18px;
-    line-height: 34px;
-}
-
-.description p {
-    opacity: 0.8;
-        color: #fff;
-}
-</style>
-
 <body class="external-page sb-l-c sb-r-c">
 
   <!-- Start: Main -->
@@ -68,16 +44,7 @@
 
       <!-- Begin: Content -->
       <section id="content">
-          <div class="row"> 
-    <div class="col-sm-6">
-        <h1>Registrate!</h1>
-        <div class="description">
-							<p class="medium-paragraph">
-								Por favor identificate para saber quien eres y que permisos tienes. It comes with a lot of new features. Check it out now!
-							</p>
-						</div>
-    </div>  
-    <div class="col-sm-6">
+
         <div class="admin-form theme-info" id="login1">
 
           <div class="row mb15 table-layout">
@@ -154,17 +121,17 @@
                       </div>
                     </div>-->
 
-                    <div class="section {{ $errors->has('email') ? ' has-error' : '' }}">
+                    <div class="section {{ $errors->has('username') ? ' has-error' : '' }}">
                       <label for="username" class="field-label text-muted fs18 mb10">Username</label>
                       <label for="username" class="field prepend-icon">
-                        <input type="emal" name="email" id="email" class="gui-input" placeholder="Enter username">
+                        <input type="text" name="username" id="username" class="gui-input" placeholder="Enter username">
                         <label for="username" class="field-icon">
                           <i class="fa fa-user"></i>
                         </label>
                       </label>
-                      @if ($errors->has('email'))
+                      @if ($errors->has('username'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('username') }}</strong>
                                     </span>
                                 @endif
                     </div>
@@ -212,8 +179,7 @@
             </form>
           </div>
         </div>
-    </div>
-</div>
+
       </section>
       <!-- End: Content -->
 
