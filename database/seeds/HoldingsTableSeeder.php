@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Entities\Holding;
 
 class HoldingsTableSeeder extends Seeder
 {
@@ -11,6 +12,6 @@ class HoldingsTableSeeder extends Seeder
      */
     public function run()
     {
-          factory(App\Holding::class, 25)->create();
+          factory(Holding::class, 25)->create();
     }
 }

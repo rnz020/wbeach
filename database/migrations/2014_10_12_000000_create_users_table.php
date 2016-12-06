@@ -16,12 +16,13 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username',50)->unique();
-            $table->string('fullname');
-            $table->enum('role',['A', 'M', 'U'])->default('A')->comments('A=Administrador M=Master(tiene acceso a todo el menu) U=usuario(tiene acceso a solo las opciones de usuario de su perfil)');
-            $table->string('email')->unique();
             $table->string('password');
-            $table->boolean('active')->default(true);
+            $table->string('email')->unique();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->enum('type',['A', 'M', 'U'])->default('A')->comments('A=Administrador M=Master(tiene acceso a todo el menu) U=usuario(tiene acceso a solo las opciones de usuario de su perfil)');
             $table->rememberToken();
+            $table->boolean('actived')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

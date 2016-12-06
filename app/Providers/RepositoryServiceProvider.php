@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Repositories\Holding\HoldingRepository;
+use App\Repositories\Holding\EloquentHolding;
 
-class AppServiceProvider extends ServiceProvider
+class RepositoryServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
@@ -23,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        $this->app->singleton(HoldingRepository::class, EloquentHolding::class);
     }
 }

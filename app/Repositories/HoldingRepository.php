@@ -1,13 +1,19 @@
-<?php 
-namespace App\Models\Dao;
+<?php
 
-use App\Holding;
+namespace App\Repositories;
 
-class HoldingDAO
+use App\Entities\Holding;
+
+class HoldingRepository  extends Repository
 {
-    public static function getHoldingsForGrid($filters, $skip, $pageSize, $sort)
+    public function getModel()
     {
-        $query = Holding::select(['id', 'group_name', 'legal_name', 'ruc', 'address', 'subscription_date']);
+        return new Holding();
+    }
+   
+     public function searchPagine($filters, $skip, $pageSize, $sort) 
+    {
+        $query = $this->newQuery()->select(['id', 'group_name', 'legal_name', 'ruc', 'address', 'subscription_date']);
 
         if ($filters){
             foreach ($filters as $field => $filter){
@@ -28,6 +34,7 @@ class HoldingDAO
         $data['result'] = $query;
         $data['count']  = $count;
     
-        return $data;
+            return $data;
     }
+
 }

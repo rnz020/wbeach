@@ -1,13 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Entities;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-
-class User extends Authenticatable
+class Holding extends Model
 {
     use SoftDeletes;
 
@@ -19,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'fullname', 'type', 'email', 'password',
+        'group_name', 'legal_name', 'ruc', 'address', 'subscription_date',
     ];
 
     /**
@@ -28,6 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        
     ];
+    
 }

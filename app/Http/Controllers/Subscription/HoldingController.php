@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Subscription\Controllers;
+namespace App\Http\Controllers\Subscription;
 
 use App\Http\Requests\Subscription\HoldingRequest;
 use App\Http\Controllers\Controller;
@@ -25,7 +25,7 @@ class HoldingController extends Controller
      */
     public function index()
     {
-        return view('Subscription::holdings.index');
+        return view('subscription.holdings.index');
     }
 
     /**
@@ -35,7 +35,7 @@ class HoldingController extends Controller
      */
     public function create()
     {
-        return view('Subscription::holdings.partials.modals.create-holding');
+        return view('subscription.holdings.partials.modals.create-holding');
     }
 
     /**
@@ -53,7 +53,7 @@ class HoldingController extends Controller
                 return \Response::json(1);
         endif;
 
-            return redirect()->route('subscription.holdings');
+        return redirect()->route('subscription.holdings');
     }
 
     /**
@@ -64,7 +64,7 @@ class HoldingController extends Controller
      */
     public function show(Holding $holding)
     {
-        return view('Subscription::holdings.partials.modals.show-holding', compact('holding'));
+        return view('subscription.holdings.partials.modals.show-holding', compact('holding'));
     }
 
     /**
@@ -75,7 +75,7 @@ class HoldingController extends Controller
      */
     public function edit(Holding $holding)
     {
-        return view('Subscription::holdings.partials.modals.edit-holding', compact('holding'));
+        return view('subscription.holdings.partials.modals.edit-holding', compact('holding'));
     }
 
     /**
@@ -91,6 +91,7 @@ class HoldingController extends Controller
             $this->holding->update($holding->id, $request->all());
        
                 return \Response::json(1);
+
         endif;
     }
     
@@ -117,6 +118,6 @@ class HoldingController extends Controller
 
         $result = $this->holding->searchPagine($filter, $skip, $pageSize, $sort);
   
-            return ['data' => $result['result'], 'total' => $result['count']];
+        return ['data' => $result['result'], 'total' => $result['count']];
     }
 }

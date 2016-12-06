@@ -12,27 +12,23 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Entities\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
         'username' => $faker->unique()->userName,
+        'password' => $password ?: $password = bcrypt('123456'),
         'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
-        'username'  => $faker->unique()->userName,
-        'fullname'  => $faker->unique()->firstName . ' '.$faker->unique()->lastName,
-        'role'  => $faker->randomElement(['U','M']),
-        'email'  => $faker->unique()->safeEmail,
-      //  'password'  => $password ?: $password = bcrypt('123456'),
-        'password'  => \Hash::make('123456'),
-        'active'  => '1',
+        'first_name'  => $faker->unique()->firstName,
+        'last_name'  => $faker->unique()->lastName,
+        'type'  => $faker->randomElement(['U','M']),
         'remember_token'  => str_random(10),
+        'actived'  => '1',
     ];
 });
 
 
-$factory->define(App\Holding::class, function (Faker\Generator $faker) {
+$factory->define(App\Entities\Holding::class, function (Faker\Generator $faker) {
 
     return [
         'group_name' => $faker->unique()->company,

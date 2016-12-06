@@ -531,7 +531,7 @@
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
           	<img src="<?= asset("img/avatars/5.jpg") ?>" alt="avatar" class="mw30 br64">
-          	<span class="hidden-xs pl15"> {{ Auth::user()->username }} </span>
+          	<span class="hidden-xs pl15"> {{ Auth::user()->full_name }} </span>
                 <span class="caret caret-tp hidden-xs"></span>
                 @endif
             </a>

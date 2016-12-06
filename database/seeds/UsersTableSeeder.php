@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Entities\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -11,16 +12,17 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class)->create([
-            'username'  => 'admin',
-            'fullname'  => 'administrador',
-            'role'  => 'A',
-            'email'  => 'ramses.cr02@gmail.com',
-            'password'  => \Hash::make('123456'),
-            'active'  => '1',
-            'remember_token'  => '12324f',
+        factory(App\Entities\User::class)->create([
+            'username' => 'admin',
+            'password' => \Hash::make('123456'),    
+            'email' => 'administrador@penion.com',
+            'first_name'  => 'Admin',
+            'last_name'  => 'Peñon',
+            'type'  => 'A',
+            'remember_token' => str_random(10), 
+            'actived'  => '1',
         ]);
         
-        factory(App\User::class, 40)->create();
+        factory(User::class, 40)->create();
     }
 }
